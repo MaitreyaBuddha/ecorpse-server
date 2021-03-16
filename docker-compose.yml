@@ -1,0 +1,31 @@
+# For the benefit of all beings.
+
+version: '3.7'
+
+services:
+  ecorpse:
+    build: .
+    command: 'sh ./run.sh'
+    ports:
+      - "5000:5000"
+    restart: always
+    # depends_on:
+    #   - mongodb
+    volumes:
+      - ${PWD}/ecorpse:/ecorpse
+#     environment:
+#       MONGO_USERNAME: ${MONGO_USERNAME}
+#       MONGO_PASSWORD: ${MONGO_PASSWORD}
+
+#   mongodb:
+#     image: mongo:latest
+#     environment:
+#       MONGO_USERNAME: ${MONGO_USERNAME}
+#       MONGO_PASSWORD: ${MONGO_PASSWORD}
+#     ports:
+#       - 27017:27017
+#     volumes:
+#       - mongodb_data:/data/db
+
+# volumes:
+#   mongodb_data:
